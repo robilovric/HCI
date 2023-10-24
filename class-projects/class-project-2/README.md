@@ -4,6 +4,10 @@
 which is a register of vaccinations for children whose users are pediatricians, 
 therefore we created such a type of persona.**
 
+**The personas were made using the figma user template, which you can see at the [following link!](https://www.figma.com/file/Y7uYhA0ewSjk0DOUzPYXU5/User-Persona-Template-(Google-UX-Themed)-(Community)?type=whiteboard&t=YiwEbhYcarIYLVN1-6)**
+
+**[Sitemap available here!](https://www.figma.com/file/BMtBDqxCIBP3KlYM0egO0L/Site-map-template-(Community)?type=design&t=0qNRDQ1oK9r50MUU-6)**
+
 **These are the user details we created through the chatgpt application:**
 
 1. Dr. Sarah Mitchell
@@ -89,9 +93,6 @@ therefore we created such a type of persona.**
 These detailed personal profiles help you understand the unique characteristics, needs and responsibilities of the pediatricians who will be using our child immunization registry application. 
 This understanding will guide the design and functionality of our app to better serve their specific needs and preferences.
 
-**The personas were made using the figma user template, which you can see at the [following link!](https://www.figma.com/file/Y7uYhA0ewSjk0DOUzPYXU5/User-Persona-Template-(Google-UX-Themed)-(Community)?type=whiteboard&t=YiwEbhYcarIYLVN1-6)**
-
-**[Link za vizualni prikaz sitemapa](https://www.figma.com/file/BMtBDqxCIBP3KlYM0egO0L/Site-map-template-(Community)?type=design&t=0qNRDQ1oK9r50MUU-6)**
 
 **ChatGPT prompts that used to configure sitemap:**
 1. _Propose a set of 10 topics related to vaccanation._
