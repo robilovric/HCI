@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Home(){
+export default function Home() {
   return (
-    <main>
-      <h1 className="mainpage">Home</h1>
+    <main className="flex min-h-screen flex-col items-center justify-between p-10">
+      <h1 className="text-3xl font-bold">Landing page</h1>
     </main>
   );
 }
