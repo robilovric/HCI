@@ -1,17 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Link from 'next/link'
-//import clsx from "clsx";
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
-const pages = {
-  home: "/",
-  news: "/news&lifestyle",
-  services: "/services",
-  about: "/about",
-  login: "/login",
-  contact: "/contact",
-};
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,16 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="flex items-center justify-center p-4">
-          <ul className="flex gap-8">
-            {Object.entries(pages).map(([name, path]) => (
-              <li key={name}>
-                <Link href={path}>{name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
