@@ -23,7 +23,7 @@ const Footer = () => (
   <div className="bg-brand-grey-800">
   <div className="container flex flex-col py-10 items-center gap-10 self-stretch md:max-lg:px-10">
     <div className="flex flex-col md:flex-row gap-10 justify-between items-center md:items-start self-stretch">
-      <div className="mx-auto">
+      <div className="ml-10">
         <Logo />
         <div className="hidden md:block text-brand-gray-50 mt-3">
           Bridging the gap.<br />
@@ -41,7 +41,7 @@ const Footer = () => (
             "Telemedicine",
           ]}
         />
-        <div className="mx-auto">
+        <div className="ml-0 mr-10">
           <h6>Headquarters</h6>
           <ul className="font-roboto mb-4">
             <li>Nad lipom 35</li>
@@ -65,7 +65,7 @@ const Footer = () => (
         </div>
       </div>
     </div>
-    <small className="mx/auto text-gray-800">
+    <small className="text-gray-800">
       Copyright @ 2023 RightAway. All rights reserved.
     </small>
   </div>
