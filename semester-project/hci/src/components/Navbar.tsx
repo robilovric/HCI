@@ -17,7 +17,7 @@ const pages = [
 
 const Navbar = () => {
   return (
-    <div className="container flex items-center justify-between py-4">
+    <div className="container flex mr-10 items-center justify-between py-4">
       <div className="mx-10">
         <Logo />
       </div>

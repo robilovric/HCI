@@ -40,7 +40,7 @@ const Footer = () => (
             "Telemedicine",
           ]}
         />
-        <div>
+        <div className="mr-10">
           <h6>Headquarters</h6>
           <ul className="font-roboto text-brand-grey-50 mb-4">
             <li>Nad lipom 35</li>
