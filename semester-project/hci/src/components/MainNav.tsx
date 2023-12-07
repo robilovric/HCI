@@ -9,7 +9,7 @@ const MainNav = ({ pages }: { pages: Page[] }) => {
 
   return (
     <nav className="hidden md:block">
-      <ul className="flex gap-4 mx-auto">
+      <ul className="flex gap-4 mr-20">
         {pages.map(({ href, title }) => (
           <li key={href}>
             <Link href={href}>
