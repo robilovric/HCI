@@ -10,7 +10,7 @@ type ListProps = {
 const FooterList = ({ title, items }: ListProps) => {
   return (
     <div>
-      <ul className="font-roboto text-brand-purple-50">
+      <ul className="font-roboto text-brand-grey-50">
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
@@ -20,68 +20,55 @@ const FooterList = ({ title, items }: ListProps) => {
 };
 
 const Footer = () => (
-  <div className="bg-brand-purple-800">
-    <div className="container flex flex-col py-10 items-center gap-10 self-stretch md:max-lg:px-10">
-      <div className="flex flex-col md:flex-row gap-10 justify-between items-center md:items-start self-stretch">
-        <div>
-          <Logo />
-          <div className="hidden md:block text-brand-purple-50 mt-3 italic font-playfair">
-            Design is not just what it looks <br /> like and feels like.
-            It&apos;s how it <br /> works.
-          </div>
+  <div className="bg-brand-grey-800">
+  <div className="container flex flex-col py-10 items-center gap-10 self-stretch md:max-lg:px-10">
+    <div className="flex flex-col md:flex-row gap-10 justify-between items-center md:items-start self-stretch">
+      <div className="mx-10">
+        <Logo />
+        <div className="hidden md:block text-brand-gray-50 mt-3">
+          Bridging the gap.<br />
+          Optimize your workflow,<br />wait no more!
         </div>
-        <div className="flex flex-wrap justify-center gap-11">
-          <FooterList
-            title="Services"
-            items={[
-              "User Research",
-              "Design Systems",
-              "Rebranding",
-              "Marketing",
-              "Market Research",
-              "User Journey",
-            ]}
-          />
-          <FooterList
-            title="Sitemap"
-            items={[
-              "Home",
-              "Showcase",
-              "Blog",
-              "About",
-              "Contact Us",
-              "Sign In",
-            ]}
-          />
-          <div>
-            <h6>Contact Us</h6>
-            <ul className="font-roboto text-brand-purple-50 mb-4">
-              <li>Nad lipom 35</li>
-              <li>10000, Zagreb, Croatia</li>
-            </ul>
-            <ul className="font-roboto text-brand-purple-50 mb-4">
-              <li className="flex gap-2 items-center">
-                <Icons.phone className="w-4" /> +385 123 0000
-              </li>
-              <li className="flex gap-2 items-center">
-                <Icons.envelope className="w-4" />
-                rightaway@yahoo.com
-              </li>
-            </ul>
-            <div className="flex gap-2">
-              <Icons.facebook className="w-6" />
-              <Icons.twitter className="w-6" />
-              <Icons.linked className="w-6" />
-              <Icons.instagram className="w-6" />
-            </div>
+      </div>
+      <div className="flex flex-wrap justify-center gap-11">
+        <FooterList
+          title="Services"
+          items={[
+            "Online Appointments",
+            "Patient Management",
+            "Medical News",
+            "Telemedicine",
+          ]}
+        />
+        <div>
+          <h6>Headquarters</h6>
+          <ul className="font-roboto text-brand-grey-50 mb-4">
+            <li>Nad lipom 35</li>
+            <li>10000, Zagreb, Croatia</li>
+          </ul>
+          <ul className="font-roboto text-brand-grey-50 mb-4">
+            <li className="flex gap-2 items-center">
+              <Icons.phone className="w-4" /> +385 01 232 777
+            </li>
+            <li className="flex gap-2 items-center">
+              <Icons.envelope className="w-4" />
+              support@rightaway.com
+            </li>
+          </ul>
+          <div className="flex gap-2">
+            <Icons.facebook className="w-6" />
+            <Icons.twitter className="w-6" />
+            <Icons.linked className="w-6" />
+            <Icons.instagram className="w-6" />
           </div>
         </div>
       </div>
-      <p className="font-roboto text-brand-purple-600 text-base sm:text-lg">
-        Copyright @ 2023 RightAway. All rights reserved.
-      </p>
     </div>
+    <small className="font-iter text-brand-grey-600">
+      Copyright @ 2023 RightAway. All rights reserved.
+    </small>
   </div>
+</div>
 );
 
 export default Footer;

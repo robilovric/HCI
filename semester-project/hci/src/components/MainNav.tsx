@@ -3,32 +3,30 @@
 import { Page } from "./Navbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC } from "react";
-import Logo from "./Logo";
-import { title } from "process";
-//import { cn } from "@/lib/utils";
-
 
 const MainNav = ({ pages }: { pages: Page[] }) => {
   const pathName = usePathname();
 
   return (
-      <nav className="flex items-center justify-center p-4">
-        <ul className="flex gap-2">
-          {pages.map(({href, title}) => (
-            <li key={href}>
-              <Link href={href}>
-                <a className={`${
-                  pathName===href ? "bg-brand-purple-700 text-brand-purple-100 pointer-events-none" : ''
+    <nav className="hidden md:block">
+      <ul className="flex gap-4">
+        {pages.map(({ href, title }) => (
+          <li key={href}>
+            <Link href={href}>
+              <span
+                className={`${
+                  pathName === href
+                    ? "text-gray-800 border-b-2 border-gray-800"
+                    : "text-gray-600 hover:text-gray-800"
                 }`}
-                >
-                  {title}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+              >
+                {title}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

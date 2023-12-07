@@ -2,21 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 51, 51, 51; /* Dark gray for text */
+  --background-start-rgb: 255, 255, 255; /* Light background color */
+  --background-end-rgb: 247, 247, 247; /* Slightly off-white background */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-start-rgb));
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 51, 51, 51; /* Dark gray for text */
+    --background-start-rgb: 255, 255, 255; /* Light background color */
+    --background-end-rgb: 247, 247, 247; /* Slightly off-white background */
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  }
 }
+
+/* Additional Styles */
+/* Include typography, fonts, and any other styles here */
+
+
