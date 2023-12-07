@@ -18,7 +18,7 @@ const pages = [
 const Navbar = () => {
   return (
     <div className="container flex items-center justify-between py-4">
-      <div className="mx-10">
+      <div className="mx-auto">
         <Logo />
       </div>
       <MainNav pages={pages} />
