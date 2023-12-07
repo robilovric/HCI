@@ -17,7 +17,7 @@ const HeroSection = () => (
             <div className="relative w-full max-w-screen-lg mt-8">
                 <Image src={heroImage1} width={1200} height={300} alt="Hero Image" />
                 <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 py-3 px-6 bg-black text-white text-lg font-semibold hover:bg-gray-900 transition duration-300 ease-in-out">
-                LET'S TALK
+                LET&#39;S TALK
                 </button>
             </div>
 
