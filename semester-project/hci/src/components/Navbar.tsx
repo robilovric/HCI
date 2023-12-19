@@ -1,5 +1,9 @@
+"use client";
+
 import Logo from "./Logo";
 import MainNav from "./MainNav";
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export type Page = {
   href: string;
@@ -16,12 +20,39 @@ const pages = [
 ];
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div className="container flex items-center justify-between py-4">
-      <div className="ml-10 mr-5">
-        <Logo />
+    <div className="container py-4 sticky top-0 bg-white z-50">
+      <div className="flex items-center justify-between">
+        <div className="ml-10 mr-5">
+          <Logo />
+        </div>
+        {/* Hamburger menu for mobile */}
+        <div className="md:hidden">
+          <button onClick={toggleMobileMenu} className="text-gray-800">
+          <svg viewBox="0 0 100 80" width="40" height="40" className="mr-4">
+              <rect width="100" height="20"></rect>
+              <rect y="30" width="100" height="20"></rect>
+              <rect y="60" width="100" height="20"></rect>
+            </svg>
+          </button>
+        </div>
+        {/* Mobile navigation */}
+        <MainNav pages={pages} isMobileMenuOpen={isMobileMenuOpen} closeMobileMenu={closeMobileMenu} />
       </div>
-      <MainNav pages={pages} />
+        {/* Desktop navigation */}
+        <div className="md:flex hidden items-center justify-end">
+          <MainNav pages={pages} isMobileMenuOpen={false} closeMobileMenu={closeMobileMenu} />
+        </div>
     </div>
   );
 };

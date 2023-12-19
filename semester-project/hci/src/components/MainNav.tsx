@@ -2,24 +2,26 @@
 
 import { Page } from "./Navbar";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import React from 'react';
 
-const MainNav = ({ pages }: { pages: Page[] }) => {
-  const pathName = usePathname();
+type MainNavProps = {
+  pages: Page[];
+  isMobileMenuOpen: boolean;
+  closeMobileMenu: () => void;
+};
+
+const MainNav: React.FC<MainNavProps> = ({ pages, isMobileMenuOpen, closeMobileMenu }) => {
+  const handleLinkClick = () => {
+    closeMobileMenu(); // Close mobile menu when link is clicked
+  };
 
   return (
-    <nav className="hidden md:block">
-      <ul className="flex gap-4 mr-20">
+    <nav className={`${isMobileMenuOpen ? 'fixed inset-0 bg-gray-100 z-50' : 'hidden'}`}>
+      <ul className="text-center pt-20">
         {pages.map(({ href, title }) => (
-          <li key={href}>
+          <li key={href} className="my-4">
             <Link href={href}>
-              <span
-                className={`${
-                  pathName === href
-                    ? "text-gray-800 border-b-2 border-gray-800"
-                    : "text-gray-600 hover:text-gray-800"
-                }`}
-              >
+              <span className="text-gray-800 hover:text-gray-600 cursor-pointer block" onClick={handleLinkClick}>
                 {title}
               </span>
             </Link>

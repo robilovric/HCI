@@ -3,7 +3,7 @@ import heroImage1 from "/public/hero/hero1.jpg";
 
 const HeroSection = () => (
     <section>
-        <div className="container mx-auto flex flex-col items-center justify-center py-20">
+        <div className="container mx-auto flex flex-col items-center justify-center md:pt-20 pb-20">
             <h1 className="text-black font-bold text-center text-2xl md:text-3xl lg:text-4xl mb-4">
                 Empowering Healthcare for Everyone
             </h1>
