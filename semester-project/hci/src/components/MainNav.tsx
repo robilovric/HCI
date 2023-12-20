@@ -16,12 +16,12 @@ const MainNav: React.FC<MainNavProps> = ({ pages, isMobileMenuOpen, closeMobileM
   };
 
   return (
-    <nav className={`${isMobileMenuOpen ? 'fixed inset-0 bg-gray-100 z-50' : 'hidden'}`}>
-      <ul className="text-center pt-20">
+    <nav className={`${isMobileMenuOpen ? 'fixed inset-0 bg-gray-100 z-50' : 'hidden'} md:flex items-center`}>
+      <ul className={`${isMobileMenuOpen ? 'text-center' : 'flex'}`}>
         {pages.map(({ href, title }) => (
-          <li key={href} className="my-4">
+          <li key={href} className={`${isMobileMenuOpen ? 'my-4' : 'mx-4'}`}>
             <Link href={href}>
-              <span className="text-gray-800 hover:text-gray-600 cursor-pointer block" onClick={handleLinkClick}>
+              <span className="text-gray-800 hover:text-gray-600 cursor-pointer" onClick={handleLinkClick}>
                 {title}
               </span>
             </Link>

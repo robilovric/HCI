@@ -3,7 +3,7 @@
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
 
 export type Page = {
   href: string;
@@ -30,14 +30,16 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
-    <div className="container py-4 sticky top-0 bg-white z-50">
+    <div className={`${isMobile ? "container py-4 sticky top-0 bg-white z-50" : "container py-4 top-0 bg-white z-50"}`}>
       <div className="flex items-center justify-between">
         <div className="ml-10 mr-5">
           <Logo />
         </div>
         {/* Hamburger menu for mobile */}
-        <div className="md:hidden">
+        <div className="md:hidden mr-5">
           <button onClick={toggleMobileMenu} className="text-gray-800">
           <svg viewBox="0 0 100 80" width="40" height="40" className="mr-4">
               <rect width="100" height="20"></rect>
@@ -47,12 +49,14 @@ const Navbar = () => {
           </button>
         </div>
         {/* Mobile navigation */}
-        <MainNav pages={pages} isMobileMenuOpen={isMobileMenuOpen} closeMobileMenu={closeMobileMenu} />
-      </div>
+        {isMobileMenuOpen && (
+          <MainNav pages={pages} isMobileMenuOpen={isMobileMenuOpen} closeMobileMenu={closeMobileMenu} />
+        )}
         {/* Desktop navigation */}
         <div className="md:flex hidden items-center justify-end">
           <MainNav pages={pages} isMobileMenuOpen={false} closeMobileMenu={closeMobileMenu} />
         </div>
+      </div>
     </div>
   );
 };
