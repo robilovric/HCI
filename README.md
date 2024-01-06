@@ -34,7 +34,6 @@ Design optimizations.||Desktop navigation was not appearing.|
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Implemented pagination. 
-Working properly.||
+|Implemented pagination. Working properly.||
 
 </div>
