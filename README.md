@@ -21,7 +21,8 @@
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
 |Implemented hamburger menu.
-Design optimizations.||Desktop navigation was not appearing.|
+Design optimizations.|
+|Desktop navigation was not appearing.|
 |New package data.||
 |Fixing deployment error.||
 
