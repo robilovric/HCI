@@ -20,8 +20,9 @@
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Implemented hamburger menu. Design optimizations.||
-|New package data.|Desktop navigation was not appearing.|
+|Implemented hamburger menu.
+Design optimizations.||Desktop navigation was not appearing.|
+|New package data.||
 |Fixing deployment error.||
 
 
@@ -33,6 +34,7 @@
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Implemented pagination. Working properly.||
+|Implemented pagination. 
+Working properly.||
 
 </div>
