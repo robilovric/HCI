@@ -13,3 +13,26 @@
 - **`/docs`**: Includes project documentation (final report in Markdown format or a link to it).
 - **`/misc`**: Miscellaneous files related to the project.
 
+## Project timeline
+
+### Week 1
+<div align="center">
+  
+|   Implemented :white_check_mark: |  Problems  :x: |
+| :--- | :--- |
+|Implemented hamburger menu. Design optimizations.||
+|New package data.|Desktop navigation was not appearing.|
+|Fixing deployment error.||
+
+
+</div>
+
+### Week 2 - current
+
+<div align="center">
+  
+|   Implemented :white_check_mark: |  Problems  :x: |
+| :--- | :--- |
+|Implemented pagination. Working properly.||
+
+</div>
