@@ -18,9 +18,9 @@
 ### Week 1
 <div align="center">
   
-|   Implemented :white_check_mark: |  Problems :x: |
+|   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Implemented hamburger menu.Design optimizations.||Desktop navigation was not appearing.|
+|Implemented hamburger menu. Design optimizations.|Desktop navigation was not appearing.|
 |New package data.||
 |Fixing deployment error.||
 
