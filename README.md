@@ -31,7 +31,7 @@
 
 <div align="center">
   
-  |   Implemented :white_check_mark: |  Problems :x: |
+|   Implemented :white_check_mark: |  Problems :x: |
 | :--- | :--- |
 |Implemented pagination. Working properly.||
 
