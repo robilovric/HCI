@@ -3,6 +3,7 @@ import Pagination from "@/app/news&lifestyle/components/Pagination";
 import NewsCard from "@/app/news&lifestyle/components/NewsCard";
 import { getPosts } from "@/app/news&lifestyle/lib/api";
 import { parseSearchParams } from "@/app/news&lifestyle/lib/utils";
+import contentfulService from "../../../../lib/contentfulClient";
 
 export const metadata = {
   title: "News & Lifestyle",
@@ -40,6 +41,9 @@ export type PaginationProps = {
 export default async function Blog({ searchParams }: SearchParams) {
   const { page, limit } = parseSearchParams({ searchParams });
   const { posts, pagination } = await getPosts({ page, limit });
+  const news = await contentfulService.getAllPosts();
+  
+  console.log(news)
 
   return (
     <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
@@ -47,11 +51,12 @@ export default async function Blog({ searchParams }: SearchParams) {
 
       <Pagination pagination={pagination} page={page} />
 
+
       <ul className="grid md:grid-cols-2 gap-12">
-        {posts.map((post) => (
+        {news.map((post) => (
           <li key={post.id}>
             <Link href={`news&lifestyle/${post.id}`}>
-              <NewsCard post={post} />
+            <NewsCard post={{ title: post.newsTitle, url: post.newsImage }} />
             </Link>
           </li>
         ))}
