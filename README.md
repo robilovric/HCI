@@ -27,12 +27,22 @@
 
 </div>
 
-### Week 2 - current
+### Week 2 
 
 <div align="center">
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
 |Implemented pagination. Working properly.||
+
+</div>
+
+### Week 3
+
+<div align="center">
+  
+|   Implemented :white_check_mark: |  Problems  :x: |
+| :--- | :--- |
+|Aded contact and login page.||Encounter deployment issues regarding cms.|react/no-unescaped-entities fix.|
 
 </div>
