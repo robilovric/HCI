@@ -8,7 +8,7 @@ export default function NotFound() {
     <div className="text-center">
       <div className="mb-6">
         <h1 className="text-4xl font-bold">Relax,</h1>
-        <h1 className="text-4xl font-bold">We'll redirect you right away!</h1>
+        <h1 className="text-4xl font-bold">We&#39;ll redirect you right away!</h1>
       </div>
       <p className="text-gray-600">
         It looks like you are trying
