@@ -43,7 +43,7 @@
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Aded contact and login page.|Encounter deployment issues regarding cms.
-|react/no-unescaped-entities fix.||
+|Aded contact and login page.|Encountered problems with the CMS implementation.
+|React/no-unescaped-entities fix.||
 
 </div>
