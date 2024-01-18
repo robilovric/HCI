@@ -12,8 +12,7 @@ export default async function NewsPost({ params }: { params: Params }) {
   return (
     <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
       <h1 className="text-3xl font-bold p-10 capitalize">
-        <span className="text-neutral-400">News article {post?.id}: </span>
-        {post?.newsTitle}
+        <span className="text-neutral-400">{post?.newsTitle}</span>
       </h1>
       <p className="text-xl p-10">{post?.newsContent}</p>
       <Image
