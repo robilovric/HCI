@@ -16,18 +16,6 @@ const gqlAllBlogPostsQuery = `query GetNewsArticles {
   }`;
 
   interface NewsArticle {
-    sys: {
-      id: string;
-    };
-    newsTitle: string;
-    newsContent: string;
-    newsImage: {
-      url: string;
-    };
-    newsCategory: string[];
-  }
-
-  interface NewsArticle2 {
     id: string;
     newsTitle: string;
     newsContent: string;
@@ -35,30 +23,23 @@ const gqlAllBlogPostsQuery = `query GetNewsArticles {
     newsCategory: string[];
   }
   
-  interface NewsArticlesData {
-    newsArticleCollection: {
-      items: NewsArticle[];
-    };
+const gqlProductByIdQuery = `query GetPostById($postID: String!) {
+  newsArticle(id: $postID) {
+    newsTitle
+    newsContent
+    newsImage {
+      url
+    }
+    newsCategory
   }
-  
-//   export { NewsArticle, NewsArticlesData };
+  }
 
-// const gqlProductByIdQuery = `query GetPostById($postID: String!) {
-//   blogPost(id: $postID) {
-//     title
-//     text
-//     label
-//     image {
-//       title
-//       url
-//     }
-//   }
-// }`;
+`;
 
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
 
-const getAllPosts = async (): Promise<NewsArticle2[]> => {
+const getAllPosts = async (): Promise<NewsArticle[]> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -78,14 +59,13 @@ const getAllPosts = async (): Promise<NewsArticle2[]> => {
   
     const body = responseBody.data;
 
-    const blogs: NewsArticle2[] = body.newsArticleCollection.items.map((item: any) => ({
+    const blogs: NewsArticle[] = body.newsArticleCollection.items.map((item: any) => ({
         id: item.sys.id,
         newsTitle: item.newsTitle,
         newsContent: item.newsContent,
         url: item.newsImage.url,
         category: item.category,
       }));
-      console.log(body.newsArticleCollection.items)
       return blogs;
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -93,45 +73,51 @@ const getAllPosts = async (): Promise<NewsArticle2[]> => {
     }
 };
 
-// const getPostId = async (
-//   ids: string
-// ): Promise<TypeBlogDetailItem | null> => {
-//   try {
-//     const response = await fetch(baseUrl, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-//       },
-//       cache: 'no-store',
-//       body: JSON.stringify({
-//         query: gqlProductByIdQuery,
-//         variables: { postID: ids },
-//       }),
-//     });
+const getPostId = async (
+  ids: string
+): Promise<NewsArticle | null> => {
+  try {
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+      cache: 'no-store',
+      body: JSON.stringify({
+        query: gqlProductByIdQuery,
+        variables: { postID: ids },
+      }),
+    });
 
-//     const body = (await response.json()) as {
-//       data: BlogPostDetail;
-//     };
-//     const responseProduct = body.data.blogPost;
-//     const product: TypeBlogDetailItem ={
-//       id: ids, 
-//       name: responseProduct.title,
-//       description: responseProduct.text,
-//       image: responseProduct.image?.url,
-//       categories: responseProduct.label,
-//     };
-//     return product;
-//   } catch (error) {
-//     console.log(error);
+    
+    const responseBody = await response.json();
+    
 
-//     return null;
-//   }
-// };
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+    const body = responseBody.data.newsArticle;
+
+    const blog: NewsArticle = {
+        id: ids,
+        newsTitle: body.newsTitle,
+        newsContent: body.newsContent,
+        url: body.newsImage.url,
+        newsCategory: body.category,
+      };
+    return blog;
+  } catch (error) {
+    console.log(error);
+
+    return null;
+  }
+};
 
 const contentfulService = {
   getAllPosts,
-//   getPostId,
+  getPostId,
 };
 
 export default contentfulService;

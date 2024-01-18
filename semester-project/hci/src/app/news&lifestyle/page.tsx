@@ -54,7 +54,7 @@ export default async function Blog({ searchParams }: SearchParams) {
         {news.map((post) => (
           <li key={post.id}>
             <Link href={`news&lifestyle/${post.id}`}>
-            <NewsCard post={{ title: post.newsTitle, url: post.url }} />
+            <NewsCard title={post.newsTitle} url={post.url} />
             </Link>
           </li>
         ))}
