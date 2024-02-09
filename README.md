@@ -44,7 +44,7 @@
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
 |Aded contact and login page.|Encountered problems with the CMS implementation.
-|React/no-unescaped-entities fix.||Problem with cms getAllNewsArticles, get by id pending
+|React/no-unescaped-entities fix.|Problem with cms getAllNewsArticles, get by id pending.||
 
 </div>
 
