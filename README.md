@@ -56,6 +56,6 @@
 | :--- | :--- |
 |CMS implementation fix.||
 |GetBlogById implemented.||
-|Update single Blog post||
+|Update single Blog post.||
 
 </div>
