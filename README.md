@@ -47,3 +47,15 @@
 |React/no-unescaped-entities fix.||
 
 </div>
+
+### Week 4
+
+<div align="center">
+  
+|   Implemented :white_check_mark: |  Problems  :x: |
+| :--- | :--- |
+|CMS implementation fix.||
+|GetBlogById implemented.||
+|Update single Blog post||
+
+</div>
