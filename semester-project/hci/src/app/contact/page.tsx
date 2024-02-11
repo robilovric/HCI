@@ -5,7 +5,7 @@ const ContactUs = () => {
     <main className="flex min-h-screen flex-col items-center justify-center p-10 bg-white">
       <div className="max-w-md w-full p-8 bg-gray-100 rounded-md shadow-lg">
         <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-        <form className="flex flex-col space-y-4">
+        <form className="flex flex-col gap-2">
           <label className="text-sm">Your Name:</label>
           <input
             type="text"
@@ -29,7 +29,7 @@ const ContactUs = () => {
 
           <button
             type="submit"
-            className="bg-black hover:bg-gray-600 text-white py-2 rounded-md transition-all duration-300"
+            className="bg-black hover:bg-gray-600 text-white py-2 rounded-md transition-all duration-300 mt-10"
           >
             Send Message
           </button>

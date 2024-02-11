@@ -1,4 +1,3 @@
-
 const gqlAllBlogPostsQuery = `query GetNewsArticles {
     newsArticleCollection {
       items {
@@ -15,14 +14,14 @@ const gqlAllBlogPostsQuery = `query GetNewsArticles {
     }
   }`;
 
-  interface NewsArticle {
-    id: string;
-    newsTitle: string;
-    newsContent: string;
-    url: string;
-    newsCategory: string[];
-  }
-  
+interface NewsArticle {
+  id: string;
+  newsTitle: string;
+  newsContent: string;
+  url: string;
+  newsCategory: string[];
+}
+
 const gqlProductByIdQuery = `query GetPostById($postID: String!) {
   newsArticle(id: $postID) {
     newsTitle
@@ -36,7 +35,6 @@ const gqlProductByIdQuery = `query GetPostById($postID: String!) {
 
 `;
 
-
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
 
 const getAllPosts = async (): Promise<NewsArticle[]> => {
@@ -47,35 +45,35 @@ const getAllPosts = async (): Promise<NewsArticle[]> => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
-      cache: 'no-store',
+      cache: "no-store",
       body: JSON.stringify({ query: gqlAllBlogPostsQuery }),
     });
 
     const responseBody = await response.json();
 
     if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     const body = responseBody.data;
 
-    const blogs: NewsArticle[] = body.newsArticleCollection.items.map((item: any) => ({
+    const blogs: NewsArticle[] = body.newsArticleCollection.items.map(
+      (item: any) => ({
         id: item.sys.id,
         newsTitle: item.newsTitle,
         newsContent: item.newsContent,
         url: item.newsImage.url,
-        category: item.category,
-      }));
-      return blogs;
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-      return [];
-    }
+        category: item.newsCategory,
+      })
+    );
+    return blogs;
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    return [];
+  }
 };
 
-const getPostId = async (
-  ids: string
-): Promise<NewsArticle | null> => {
+const getPostId = async (ids: string): Promise<NewsArticle | null> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -83,30 +81,28 @@ const getPostId = async (
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
-      cache: 'no-store',
+      cache: "no-store",
       body: JSON.stringify({
         query: gqlProductByIdQuery,
         variables: { postID: ids },
       }),
     });
 
-    
     const responseBody = await response.json();
-    
 
     if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     const body = responseBody.data.newsArticle;
 
     const blog: NewsArticle = {
-        id: ids,
-        newsTitle: body.newsTitle,
-        newsContent: body.newsContent,
-        url: body.newsImage.url,
-        newsCategory: body.category,
-      };
+      id: ids,
+      newsTitle: body.newsTitle,
+      newsContent: body.newsContent,
+      url: body.newsImage.url,
+      newsCategory: body.category,
+    };
     return blog;
   } catch (error) {
     console.log(error);

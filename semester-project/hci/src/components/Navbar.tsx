@@ -2,8 +2,7 @@
 
 import Logo from "./Logo";
 import MainNav from "./MainNav";
-import React, { useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React, { useState } from "react";
 
 export type Page = {
   href: string;
@@ -30,18 +29,16 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
   return (
-    <div className={`${isMobile ? "container py-4 sticky top-0 bg-white z-50" : "container py-4 top-0 bg-white z-50"}`}>
+    <div className="sticky sm:static py-4 top-0 bg-gray-100 z-50">
       <div className="flex items-center justify-between">
         <div className="ml-10 mr-5">
-          <Logo />
+          <Logo logoHeight={115} logoWidth={115} />
         </div>
         {/* Hamburger menu for mobile */}
         <div className="md:hidden mr-5">
           <button onClick={toggleMobileMenu} className="text-gray-800">
-          <svg viewBox="0 0 100 80" width="40" height="40" className="mr-4">
+            <svg viewBox="0 0 100 80" width="40" height="40" className="mr-4">
               <rect width="100" height="20"></rect>
               <rect y="30" width="100" height="20"></rect>
               <rect y="60" width="100" height="20"></rect>
@@ -50,11 +47,19 @@ const Navbar = () => {
         </div>
         {/* Mobile navigation */}
         {isMobileMenuOpen && (
-          <MainNav pages={pages} isMobileMenuOpen={isMobileMenuOpen} closeMobileMenu={closeMobileMenu} />
+          <MainNav
+            pages={pages}
+            isMobileMenuOpen={isMobileMenuOpen}
+            closeMobileMenu={closeMobileMenu}
+          />
         )}
         {/* Desktop navigation */}
         <div className="md:flex hidden items-center justify-end">
-          <MainNav pages={pages} isMobileMenuOpen={false} closeMobileMenu={closeMobileMenu} />
+          <MainNav
+            pages={pages}
+            isMobileMenuOpen={false}
+            closeMobileMenu={closeMobileMenu}
+          />
         </div>
       </div>
     </div>

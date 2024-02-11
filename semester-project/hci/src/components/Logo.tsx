@@ -1,8 +1,23 @@
-import { FC } from "react";
+import Image from "next/image";
+import logoImage from "../../public/images/logo.png";
+import Link from "next/link";
 
-const Logo: FC = () => (
-  <div className="flex items-center justify-between max-w-min gap-2">
-    <span className="font-bold text-2xl md:text-3xl lg:text-4xl">RightAway!</span>
+type LogoProps = {
+  logoWidth?: number;
+  logoHeight?: number;
+};
+
+const Logo = ({ logoWidth, logoHeight }: LogoProps) => (
+  <div className="flex items-center justify-between">
+    <Link href="/">
+      <Image
+        className="rounded-full w-full h-auto"
+        src={logoImage}
+        width={logoWidth ?? 150}
+        height={logoHeight ?? 150}
+        alt="Hero Image"
+      />
+    </Link>
   </div>
 );
 

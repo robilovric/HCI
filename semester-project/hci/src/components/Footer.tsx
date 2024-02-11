@@ -1,6 +1,8 @@
-import React from 'react';
-import Logo from '@/components/Logo';
-import Icons from './icons/FooterIcons';
+import React from "react";
+import Logo from "@/components/Logo";
+import Icons from "./icons/FooterIcons";
+import FooterIcons from "./FooterIcons";
+import { footerEmail, footerPhone } from "@/helpers/constants";
 
 type ListProps = {
   title: string;
@@ -11,9 +13,13 @@ const FooterList = ({ title, items }: ListProps) => {
   return (
     <div>
       <ul className="font-roboto text-brand-grey-50">
-          <li className='font-bold md:text-3xl lg:text-4xl'>{title}</li>
+        <li className="font-bold md:text-xl lg:text-2xl text-center">
+          {title}
+        </li>
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className="text-center" key={index}>
+            {item}
+          </li>
         ))}
       </ul>
     </div>
@@ -21,51 +27,55 @@ const FooterList = ({ title, items }: ListProps) => {
 };
 
 const Footer = () => (
-  <div className="bg-brand-grey-800">
-    <div className="container flex flex-col py-10 items-center gap-10 self-stretch md:max-lg:px-10">
-      <div className="flex flex-col md:flex-row gap-10 justify-between items-center md:items-start self-stretch">
-        <div className="md:ml-10">
-          <Logo />
-          <div className="hidden md:block text-brand-gray-50 mt-3 text-center md:text-left">
-            Bridging the gap.<br />
-            Optimize your workflow.<br />
-            Wait no more!
+  <div className="bg-brand-grey-800 px-8 border-t-2 border-t-black">
+    <div className="w-full sm:inline-flex space-between pb-10 items-center ">
+      <div className="flex  flex-col items-center md:flex-row sm:w-full md:justify-between gap-10">
+        <div className="sm:inline-flex items-center sm:gap-12">
+          <div className="hidden md:flex md:flex-col  items-center">
+            <Logo />
+            <div className="text-brand-gray-50 mt-3 text-center">
+              Bridging the gap.
+              <br />
+              Optimize your workflow.
+              <br />
+              Wait no more!
+            </div>
           </div>
-        </div>
-        <div className="flex flex-wrap justify-evenly gap-7">
           <FooterList
             title="Services"
             items={[
-              'Online Appointments',
-              'Patient Management',
-              'Medical News',
-              'Telemedicine',
+              "Online Appointments",
+              "Patient Management",
+              "Medical News",
+              "Telemedicine",
             ]}
           />
-          <div className="ml-0 max-md:mr-10 text-center md:text-left">
-            <h6>Headquarters</h6>
+        </div>
+        <div className="flex flex-wrap md:gap-0">
+          <div className="text-center md:text-left">
+            <h6 className="font-bold">Headquarters</h6>
             <ul className="font-roboto mb-4">
               <li>Nad lipom 35</li>
               <li>10000, Zagreb, Croatia</li>
             </ul>
             <ul className="font-roboto mb-4">
               <li className="flex gap-2 items-center">
-                <Icons.phone className="w-4" /> +385 99 283 7744
+                <Icons.phone className="w-4" />
+                <a href={`tel:${footerPhone}}`}>{footerPhone}</a>
               </li>
               <li className="flex gap-2 items-center">
                 <Icons.envelope className="w-4" />
-                support@rightaway.com
+                <a href={`mailto:${footerEmail}}`}>{footerEmail}</a>
               </li>
             </ul>
             <div className="flex gap-2 justify-center">
-              <Icons.facebook className="w-6" />
-              <Icons.twitter className="w-6" />
-              <Icons.linked className="w-6" />
-              <Icons.instagram className="w-6" />
+              <FooterIcons />
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div className="inline-flex justify-center w-full mb-8">
       <small className="text-gray-800 text-center md:text-left">
         Copyright@2023 RightAway. All rights reserved.
       </small>
