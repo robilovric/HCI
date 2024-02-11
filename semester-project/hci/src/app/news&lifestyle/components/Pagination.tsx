@@ -9,7 +9,7 @@ type PaginationComponentProps = {
 
 const Pagination = ({ page, pagination }: PaginationComponentProps) => {
   return (
-    <div className="flex items-baseline gap-8 pb-10">
+    <div className="flex flex-col items-center gap-8 pb-10">
       <div>
         Page {page} of {pagination.last?.page}
       </div>
