@@ -45,7 +45,7 @@ const MainNav: React.FC<MainNavProps> = ({
                   className={`${
                     isMobileMenuOpen
                       ? "px-8 py-4 text-gray-800 text-center font-bold"
-                      : "font-bold text-l text-white hover:text-french-gray hover:border-b-4 border-french-gray cursor-pointer"
+                      : "font-bold text-l text-white hover:text-lapis-blue hover:border-b-4 border-lapis-blue cursor-pointer"
                   }`}
                   onClick={handleLinkClick}
                 >

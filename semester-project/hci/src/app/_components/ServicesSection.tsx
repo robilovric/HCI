@@ -36,7 +36,7 @@ const ServicesSection = () => {
         <div
           style={{
             ...mobileContainerStyles,
-            ...{ "@media (max-width: 768px)": mobileContainerStyles },
+            ...{ "@media (maxWidth: 768px)": mobileContainerStyles },
           }}
         >
           <div style={cardContainerStyles}>

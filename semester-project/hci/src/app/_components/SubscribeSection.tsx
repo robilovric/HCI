@@ -27,8 +27,8 @@ const SubscribeSection = () => {
         <button
           className={`mt-4 px-10 py-2 ${
             isButtonDisabled
-              ? "bg-gray-text-custom text-black text-lg font-semibold rounded-lg"
-              : "bg-yellow-custom text-black text-lg font-semibold rounded-lg"
+              ? "bg-french-gray text-black text-lg font-semibold rounded-lg"
+              : "bg-light-green text-black text-lg font-semibold rounded-lg"
           }`}
           type="submit"
           onClick={handleOnSendClick}
