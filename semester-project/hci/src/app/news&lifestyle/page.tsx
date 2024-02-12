@@ -42,8 +42,6 @@ export default async function Blog({ searchParams }: SearchParams) {
   const { pagination } = await getPosts({ page, limit });
   const news = await contentfulService.getAllPosts();
 
-  console.log("health, tech, nature, wellbeing, fitness,food");
-
   return (
     <main className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10">
       <h1 className="text-3xl font-bold p-10">News Index Page</h1>

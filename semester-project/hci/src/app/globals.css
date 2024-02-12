@@ -12,8 +12,15 @@
 /* Light Mode */
 @media (prefers-color-scheme: light) {
   body {
+    display: flex;
+    flex-direction: column;
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+    min-height: 100vh;
   }
 }
 
@@ -26,8 +33,15 @@
   }
 
   body {
+    display: flex;
+    flex-direction: column;
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+    min-height: 100vh;
   }
 }
 
@@ -54,5 +68,3 @@
 .description {
   color: #333;
 }
-
-

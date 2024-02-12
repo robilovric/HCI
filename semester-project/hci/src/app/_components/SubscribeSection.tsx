@@ -11,7 +11,7 @@ const SubscribeSection = () => {
   };
 
   return (
-    <div className="bg-gray-600 text-white w-full mt-10 px-10 py-16 text-center">
+    <div className="bg-lapis-blue text-night-black w-full mt-10 px-10 py-16 text-center">
       <h1 className="font-bold text-2xl ">Subscribe to newsletter</h1>
       <p className="pt-4">
         Enter your email address to register to our newsletter subscription!
@@ -25,14 +25,16 @@ const SubscribeSection = () => {
           className="mt-3 p-2 rounded-lg border-white border-1 shadow-lg text-black"
         />
         <button
-          className={`mt-4 px-10 py-2 rounded-2xl ${
-            isButtonDisabled ? "bg-gray-100 text-black" : "bg-black text-white"
+          className={`mt-4 px-10 py-2 ${
+            isButtonDisabled
+              ? "bg-gray-text-custom text-black text-lg font-semibold rounded-lg"
+              : "bg-yellow-custom text-black text-lg font-semibold rounded-lg"
           }`}
           type="submit"
           onClick={handleOnSendClick}
           disabled={isButtonDisabled}
         >
-          Send
+          SEND
         </button>
       </div>
     </div>

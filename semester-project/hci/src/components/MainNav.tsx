@@ -22,7 +22,7 @@ const MainNav: React.FC<MainNavProps> = ({
   return (
     <nav
       className={`${
-        isMobileMenuOpen ? "fixed inset-0 bg-gray-100 z-50" : "hidden"
+        isMobileMenuOpen ? "fixed inset-0 bg-emrald-green z-50" : "hidden"
       } md:flex items-center`}
     >
       <div className="flex flex-col justify-center h-full">
@@ -38,14 +38,14 @@ const MainNav: React.FC<MainNavProps> = ({
                 href={href}
                 className={`${
                   isMobileMenuOpen &&
-                  "bg-black w-1/2 rounded-xl overflow-hidden"
+                  "bg-french-gray w-1/2 rounded-xl overflow-hidden"
                 }`}
               >
                 <div
                   className={`${
                     isMobileMenuOpen
-                      ? "px-8 py-4 text-white text-center font-medium"
-                      : "text-gray-800 hover:text-gray-600 cursor-pointer"
+                      ? "px-8 py-4 text-gray-800 text-center font-bold"
+                      : "font-bold text-l text-white hover:text-french-gray hover:border-b-4 border-french-gray cursor-pointer"
                   }`}
                   onClick={handleLinkClick}
                 >

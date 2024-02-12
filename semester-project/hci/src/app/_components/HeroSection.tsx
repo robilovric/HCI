@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const HeroSection = () => (
   <section>
-    <div className="container mx-auto flex flex-col items-center justify-center md:pt-20 pb-20">
+    <div className="container mx-auto flex flex-col items-center justify-center pt-6 md:pt-8 pb-20">
       <h1 className="text-black font-bold text-center text-2xl md:text-3xl lg:text-4xl mb-4">
         {heroTitle}
       </h1>

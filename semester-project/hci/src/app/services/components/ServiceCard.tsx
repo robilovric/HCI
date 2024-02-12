@@ -13,7 +13,7 @@ const ServiceCard = ({
   serviceCardImage,
 }: ServiceCardProps) => {
   return (
-    <div className="text-black bg-gray-200 text-center w-2/3 px-4 py-2 hover:bg-gray-100">
+    <div className="text-night-black bg-french-gray text-center w-full sm:w-2/3 px-4 py-2 hover:bg-gray-500 rounded-xl shadow-2xl">
       <h1 className="font-bold text-2xl">{serviceCardTitle}</h1>
       {serviceCardImage && (
         <div className="inline-flex items-center py-4">

@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-10 bg-white">
-      <div className="max-w-md w-full p-8 bg-gray-100 rounded-md shadow-lg">
+    <div className="inline-flex justify-around w-full h-full my-auto">
+      <div className="flex flex-col max-w-md w-full p-8 bg-gray-100 rounded-md shadow-lg my-7">
         <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
         <form className="flex flex-col gap-2">
           <label className="text-sm">Your Name:</label>
@@ -35,7 +35,7 @@ const ContactUs = () => {
           </button>
         </form>
       </div>
-    </main>
+    </div>
   );
 };
 
