@@ -1,7 +1,7 @@
 # RightAway
 
 **Web app focused on current best practises in interface design.**
-**[Deployed website](https://hci-eosin.vercel.app/)**
+**[Deployed website](https://rightaway.vercel.app/)**
 
 **[Project documentation](https://rhinestone-mum-dee.notion.site/RightAway-8262bf9048f342a79fd3bab51b1d9932?pvs=4)**
 
