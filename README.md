@@ -60,7 +60,7 @@
 |GetBlogById implemented.||
 |Update single Blog post.||
 |Fix pagination style.||
-|Major code refactor.||
+|Major code refactor.|Pagination style problems.||
 
 
 </div>
