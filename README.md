@@ -61,6 +61,9 @@
 |Update single Blog post.||
 |Fix pagination style.||
 |Major code refactor.||
+|Update project design.||
+
+
 
 
 </div>
