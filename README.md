@@ -56,11 +56,11 @@
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|CMS implementation fix.||
+|CMS implementation fix.|Pagination style problems.||
 |GetBlogById implemented.||
 |Update single Blog post.||
 |Fix pagination style.||
-|Major code refactor.|Pagination style problems.||
+|Major code refactor.||
 
 
 </div>
